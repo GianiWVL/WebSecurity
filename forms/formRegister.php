@@ -8,7 +8,7 @@
 
 ?>
 
-<form id="frmRegister" action="srcRegister.php" method="POST">
+<form id="frmRegister" action="./scriptfiles/srcRegister.php" method="POST">
     <table>
         <tr>
             <td><label for="inUsername">Username: </label></td>
