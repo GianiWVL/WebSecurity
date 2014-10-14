@@ -1,5 +1,5 @@
 <?php
-
+//test
 session_start();
 if (isset($_SESSION['Logged']))
 {
