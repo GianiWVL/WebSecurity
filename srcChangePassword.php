@@ -2,7 +2,7 @@
 /**
 Door Tommy
  */
-include_once 'DBConnect.php';
+include_once 'scriptfiles/DBConnect.php';
 
 if($dbh->connect_error){
 
