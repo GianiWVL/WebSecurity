@@ -183,7 +183,7 @@
     <div  id="header">
         <div id="pHeader">
             <?php
-            include_once 'DBConnect.php';
+            include_once 'scriptfiles/DBConnect.php';
             global $dbh;
             $cat = htmlentities($_GET['cat']);
             $resultThreads = mysqli_query($dbh, "SELECT Title FROM tblCategorie WHERE CategorieID='".htmlentities($cat)."'");
@@ -204,7 +204,7 @@
         <div id='history'>
             <div id='historyMessages' >
                 <?php
-                include_once 'DBConnect.php';
+                include_once 'scriptfiles/DBConnect.php';
 
                 if (isset($_GET['cat'])) {
                     $cat = $_GET['cat'];

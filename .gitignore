@@ -26,7 +26,8 @@ $RECYCLE.BIN/
 .LSOverride
 
 # Icon must end with two \r
-Icon
+Icon
+
 
 # Thumbnails
 ._*
@@ -38,9 +39,7 @@ Icon
 # Directories potentially created on remote AFP share
 .AppleDB
 .AppleDesktop
-
 .idea/*
-
 Network Trash Folder
 Temporary Items
 .apdisk

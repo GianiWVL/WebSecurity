@@ -76,7 +76,7 @@ if($dbh->connect_errno){
         die();
     }
     $dbh->close();
-    header('Location: index.php' );
+    header('Location: ../index.php' );
 }
 
 
