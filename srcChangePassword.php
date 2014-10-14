@@ -5,10 +5,8 @@ Door Tommy
 include_once 'scriptfiles/DBConnect.php';
 
 if($dbh->connect_error){
-
-    echo 'fout';
-    die();
-    exit();
+ 
+    die('fout');
 
 }
 session_start();
@@ -35,17 +33,12 @@ if($_POST['inOldPassword'] && $_POST['inNewPassword'] && $_POST['inNewPasswordCh
     $inOldPasswordEncrypted = md5(md5($inOldPasswordEncrypted) + $inOldPasswordEncrypted);
 
     if (strcmp($inNewPasswordEncrypted, $inNewPasswordCheck) !== 0){
-        echo '<p>De wachtwoorden komen niet overeen. Gelieve opnieuw te proberen.</p>';
        terugKeren($inUsername);
-        die();
-        exit();
+        die('<p>De wachtwoorden komen niet overeen. Gelieve opnieuw te proberen.</p>');
     }
     if(strcmp($inOldPasswordEncrypted,$oldPasswordExtractedFromArray) !== 0){
-
-        echo 'Verkeerd wachtwoord ingevoerd!';
         terugKeren($inUsername);
-        exit();
-        die();
+        die('Verkeerd wachtwoord ingevoerd!');
     }
 
     if($stmt = $dbh->prepare("UPDATE tblusers SET Password=? WHERE UserName = ? ")){
