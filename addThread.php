@@ -61,7 +61,7 @@
     <div id="newMessage">
     <h2>New thread:</h2>
 
-    <form method="post" action="srcNewThread.php">
+    <form method="post" action="scriptfiles/srcNewThread.php">
         <table>
             <tr>
                 <td style='width: 100px'>Thread title:</td>

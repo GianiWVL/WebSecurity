@@ -74,9 +74,9 @@ if($dbh->connect_errno){
             $resPostID = mysqli_fetch_array($resultPostID);
             $dbh->close();
 
-            header("Location: showthread.php?cat=".htmlentities($_SESSION['currentCat'])."&thread=".htmlentities($_SESSION['currentThread'])."&page=".$maxPageCeil."#".htmlentities($resPostID[0]));
+            header("Location: ../showthread.php?cat=".htmlentities($_SESSION['currentCat'])."&thread=".htmlentities($_SESSION['currentThread'])."&page=".$maxPageCeil."#".htmlentities($resPostID[0]));
         } else {
-            header("Location: showthread.php");
+            header("Location: ../showthread.php?cat=".htmlentities($_SESSION['currentCat'])."&thread=".htmlentities($_SESSION['currentThread'])."&page=1");
 
         }
 
@@ -85,7 +85,7 @@ if($dbh->connect_errno){
             return $resultUser['UserID'];
         }
     } else {
-        header("Location: showthread.php");
+        header("Location: ../showthread.php");
 
     }
 
