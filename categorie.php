@@ -58,7 +58,7 @@
         <a href="index.php"><?php include_once "loginCheck.php"; if($_SESSION['Logged'] != ''){ echo 'Logout'; } else { echo 'Registreer|Login'; } ?></a>
     </nav>
     <?php
-    include_once "DBConnect.php";
+    include_once "scriptfiles/DBConnect.php";
     if($dbh->connect_errno){
         echo "Failed to connect to database. Error: " . $dbh->connect_error;
         die();

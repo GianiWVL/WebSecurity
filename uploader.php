@@ -1,4 +1,4 @@
-﻿<?php
+<?php
 	$target_path = "afbeeldingen/";
 	$namePicture = "profilePic";
 	//$target_path = $target_path . basename($_FILES['file']['name']);

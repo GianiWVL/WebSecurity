@@ -2,7 +2,7 @@
 /**
 Door Tommy
  */
-include_once 'scriptfiles/DBConnect.php';
+include_once 'DBConnect.php';
 
 if($dbh->connect_error){
 
@@ -20,11 +20,7 @@ function terugKeren($name){
 
 if($_POST['inOldPassword'] && $_POST['inNewPassword'] && $_POST['inNewPasswordCheck']){
 
-    if($stmt = $dbh->prepare( "SELECT Password FROM tblusers WHERE UserName = ? ")){
-        $stmt->bind_param('s',$inUsername);
-        $getOldPassword = $stmt->execute();
-    }
-   // $getOldPassword = mysqli_query($dbh, "SELECT Password FROM tblusers WHERE UserName ='".htmlentities($inUsername)."'");
+    $getOldPassword = mysqli_query($dbh, "SELECT Password FROM tblusers WHERE UserName ='".htmlentities($inUsername)."'");
 
     $OldPassword = mysqli_fetch_array($getOldPassword);
     $oldPasswordExtractedFromArray = $OldPassword[0];

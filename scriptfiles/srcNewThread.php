@@ -1,6 +1,6 @@
 <?php
 include_once "DBConnect.php";
-include_once "loginCheck.php";
+include_once "../loginCheck.php";
 if($dbh->connect_errno){
     echo "Failed to connect to database. Error: " . $dbh->connect_error;
     die();
@@ -42,13 +42,13 @@ if($dbh->connect_errno){
             $sql = "INSERT INTO `honeypot`.`tblMessages` (`ID`, `PostID`, `Body`, `UserID`, `ThreadID`, `DateTime`, `PostIP`) VALUES (NULL, '1', '".htmlentities($message)."', '".htmlentities($resUserID['UserID'])."', '".htmlentities($newThreadID)."', '".htmlentities($DateTime)."', '".htmlentities($clientip)."')";
             $result = mysqli_query($dbh, $sql);
 
-            header("Location: showthread.php?cat=".htmlentities($_SESSION['currentCat'])."&thread=".htmlentities($newThreadID)."&page=1#1");
+            header("Location: ../showthread.php?cat=".htmlentities($_SESSION['currentCat'])."&thread=".htmlentities($newThreadID)."&page=1#1");
         } else {
-            header("Location: showthread.php?cat=".htmlentities($_SESSION['currentCat'])."&thread=".htmlentities($newThreadID)."&page=1");
+            header("Location: ../showthread.php?cat=".htmlentities($_SESSION['currentCat'])."&thread=".htmlentities($newThreadID)."&page=1");
 
         }
     } else {
-        header("Location: showthread.php");
+            header("Location: ../showthread.php?cat=".htmlentities($_SESSION['currentCat'])."&thread=".htmlentities($newThreadID)."&page=1");
 
     }
 

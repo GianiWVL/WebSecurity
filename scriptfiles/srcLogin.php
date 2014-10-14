@@ -33,7 +33,7 @@ if($dbh->connect_error){
             while($row = $result->fetch_assoc()) {
                 session_start();
                 $_SESSION['Logged'] = $row['UserName'];
-                header('Location: categorie.php' );
+                header('Location: ../categorie.php' );
             }
             $result->close();
         }else{
