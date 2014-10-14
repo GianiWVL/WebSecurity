@@ -121,12 +121,12 @@
     <div id="header">
         <h1>
             <?php
-            include_once 'DBConnect.php';
+            include_once 'scriptfiles/DBConnect.php';
             if ($dbh->connect_errno) {
                 echo "Failed to connect to database. Error: " . $dbh->connect_error;
                 die();
             } else {
-                include_once 'DBConnect.php';
+                include_once 'scriptfiles/DBConnect.php';
                 global $dbh;
                 $cat = htmlentities($_GET['cat']);
                 $resultThreads = mysqli_query($dbh, "SELECT Title FROM tblCategorie WHERE CategorieID='".htmlentities($cat)."'");
@@ -149,7 +149,7 @@
                     $thread = $_GET['thread'];
                     if (isset($_GET['page'])) {
                         $currentpage;
-                        include_once "DBConnect.php";
+                        include_once "scriptfiles/DBConnect.php";
                         include_once "loginCheck.php";
 
                         if ($dbh->connect_errno) {
@@ -195,9 +195,7 @@
                                     echo "<table class='tblHistoryMessages' id=" . $row['PostID'] . ">";
                                     echo "<tr>";
                                     echo "<td style='width: 17%'>";
-                                    //FOTO HIER
-                                    include'srcGetPicture.php';
-                                    //echo "<a href='profiel.php?Username=" . $rowUser['UserName'] . "' class='userlink'><img src='https://forums.oneplus.net/styles/oneplus2014/xenforo/avatars/avatar_l.png' /></a>";
+                                    include'scriptfiles/srcGetPicture.php';
                                     echo "<p style='color: red'><a href='profiel.php?Username=" . $rowUser['UserName'] . "' class='userlink'>" . $rowUser['UserName'] . "</a></p>";
                                     echo $row['DateTime'];
                                     echo "</td>";
@@ -222,6 +220,9 @@
                         global $cat;
                         header("Location: showthread.php?cat=".$cat."&thread=".$thread."&page=1");
                     }
+                } else {
+                    header("Location: categorie.php");
+
                 }
 
                 function getUserID($username) {
@@ -264,7 +265,7 @@
         <div id="newMessage">
             <h2>New message:</h2>
 
-            <form method="post" action="srcPostMessage.php">
+            <form method="post" action="scriptfiles/srcPostMessage.php">
                 <table>
                     <tr>
                         <td style='width: 100px'>Message:</td>
