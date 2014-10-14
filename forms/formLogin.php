@@ -7,7 +7,7 @@
  */
 
 ?>
-<form id="frmLogin" action="../scriptfiles/srcLogin.php" method="POST" style="width: 500px; height: 41px">
+<form id="frmLogin" action="./scriptfiles/srcLogin.php" method="POST" style="width: 500px; height: 41px">
     <table>
         <tr style="vertical-align: middle; line-height: 35px; color: white; font-weight: bold">
             <td><label for="inUsername">Username: </label></td>
