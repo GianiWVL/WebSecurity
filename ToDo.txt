@@ -1,0 +1,2 @@
+-Clausule voor als er geen message of titel voor een thread gegeven wordt
+

@@ -98,7 +98,7 @@ if (isset($_SESSION['Logged']))
             <tr>
                 <td>
                     <?php
-                        include_once 'forms/formRegister.php';
+                        include_once 'formRegister.php';
                     ?>
                 </td>
                 <td>
@@ -111,7 +111,7 @@ if (isset($_SESSION['Logged']))
             <a href="index.php">Registreer|Login</a>
             <div id="login" style="vertical-align: middle;line-height: 50px;">
                 <?php
-					include_once 'forms/formLogin.php';
+					include_once 'formLogin.php';
                 ?>
             </div>
         </nav>
