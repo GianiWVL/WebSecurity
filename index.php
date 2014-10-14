@@ -1,5 +1,6 @@
 <?php
 //lol
+//lol
 session_start();
 if (isset($_SESSION['Logged']))
 {
